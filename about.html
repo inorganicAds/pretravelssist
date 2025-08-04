@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Pre-Travel Essentials</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            min-height: 100vh;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fadeInUp {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .animate-fadeInUp.delay-200 {
+            animation-delay: 0.2s;
+        }
+
+        /* Utility for Lucide Icons */
+        .lucide {
+            display: inline-block;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-gray-50 antialiased">
+
+    <!-- Navigation Bar -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <i data-lucide="plane" class="text-blue-600 mr-2" style="width: 32px; height: 32px;"></i>
+                <a href="index.html" class="text-2xl font-bold text-gray-900">Pre-Travel Essentials</a>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex space-x-6">
+                <a href="index.html" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300 rounded-md py-1 px-2">Home</a>
+                <a href="products.html" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300 rounded-md py-1 px-2">Products</a>
+                <a href="about.html" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300 rounded-md py-1 px-2">Why Us?</a>
+                <a href="about.html#testimonials" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300 rounded-md py-1 px-2">Reviews</a>
+                <a href="contact.html" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300 rounded-md py-1 px-2">Contact</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-600 hover:text-blue-600 focus:outline-none p-2 rounded-md">
+                    <i data-lucide="menu" class="menu-icon" style="width: 28px; height: 28px;"></i>
+                    <i data-lucide="x" class="close-icon hidden" style="width: 28px; height: 28px;"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu-overlay" class="md:hidden bg-white shadow-lg py-4 border-t border-gray-100 hidden animate-slideDown">
+            <nav class="flex flex-col items-center space-y-4">
+                <a href="index.html" class="text-gray-700 hover:text-blue-600 font-medium transition duration-300 w-full text-center py-2 px-4 rounded-md" onclick="closeMobileMenu()">Home</a>
+                <a href="products.html" class="text-gray-700 hover:text-blue-600 font-medium transition duration-300 w-full text-center py-2 px-4 rounded-md" onclick="closeMobileMenu()">Products</a>
+                <a href="about.html" class="text-gray-700 hover:text-blue-600 font-medium transition duration-300 w-full text-center py-2 px-4 rounded-md" onclick="closeMobileMenu()">Why Us?</a>
+                <a href="about.html#testimonials" class="text-gray-700 hover:text-blue-600 font-medium transition duration-300 w-full text-center py-2 px-4 rounded-md" onclick="closeMobileMenu()">Reviews</a>
+                <a href="contact.html" class="text-gray-700 hover:text-blue-600 font-medium transition duration-300 w-full text-center py-2 px-4 rounded-md" onclick="closeMobileMenu()">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- About Us Hero Section -->
+    <section class="relative bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16 md:py-24 overflow-hidden">
+        <div class="absolute inset-0 bg-pattern opacity-10"></div>
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-4 animate-fadeInUp">
+                About Pre-Travel Essentials
+            </h1>
+            <p class="text-lg md:text-xl mb-8 opacity-90 max-w-2xl mx-auto animate-fadeInUp delay-200">
+                Our mission is to make every journey a little bit easier and a lot more enjoyable.
+            </p>
+        </div>
+    </section>
+
+    <!-- Why Choose Us / Features Section -->
+    <section id="features" class="py-16 md:py-24 bg-blue-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
+                Why Choose Pre-Travel Essentials?
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="text-center p-8 bg-white rounded-xl shadow-md border border-blue-100 transform hover:scale-105 transition-transform duration-300">
+                    <div class="flex justify-center mb-4"><i data-lucide="award" class="text-blue-600" style="width: 48px; height: 48px;"></i></div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Premium Quality</h3>
+                    <p class="text-gray-600">We handpick only the highest quality products to ensure durability and reliability for your travels.</p>
+                </div>
+                <div class="text-center p-8 bg-white rounded-xl shadow-md border border-blue-100 transform hover:scale-105 transition-transform duration-300">
+                    <div class="flex justify-center mb-4"><i data-lucide="truck" class="text-blue-600" style="width: 48px; height: 48px;"></i></div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Fast & Reliable Shipping</h3>
+                    <p class="text-gray-600">Get your essentials delivered to your doorstep quickly, so you're ready for your trip.</p>
+                </div>
+                <div class="text-center p-8 bg-white rounded-xl shadow-md border border-blue-100 transform hover:scale-105 transition-transform duration-300">
+                    <div class="flex justify-center mb-4"><i data-lucide="check-circle" class="text-blue-600" style="width: 48px; height: 48px;"></i></div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Hassle-Free Returns</h3>
+                    <p class="text-gray-600">Not satisfied? Our easy return policy ensures a stress-free shopping experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
+                What Our Customers Say
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="testimonial-list">
+                <!-- Testimonial cards will be dynamically inserted here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="bg-blue-700 text-white py-16 md:py-20 text-center">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                Ready to Travel Smarter?
+            </h2>
+            <p class="text-lg md:text-xl mb-8 opacity-90">
+                Explore our full range of travel essentials and prepare for your next great adventure.
+            </p>
+            <a
+                href="products.html"
+                class="inline-flex items-center px-8 py-4 bg-white text-blue-700 font-bold rounded-full shadow-lg hover:bg-gray-100 transition duration-300 transform hover:scale-105"
+            >
+                Start Your Journey Today <i data-lucide="shopping-bag" class="ml-2" style="width: 20px; height: 20px;"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- About Us -->
+            <div>
+                <h3 class="text-xl font-semibold text-white mb-4">Pre-Travel Essentials</h3>
+                <p class="text-sm">
+                    Your one-stop shop for high-quality travel gear. We believe in seamless journeys and unforgettable experiences.
+                </p>
+            </div>
+            <!-- Quick Links -->
+            <div>
+                <h3 class="text-xl font-semibold text-white mb-4">Quick Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="index.html" class="hover:text-blue-400 transition duration-300 text-sm">Home</a></li>
+                    <li><a href="products.html" class="hover:text-blue-400 transition duration-300 text-sm">Products</a></li>
+                    <li><a href="about.html" class="hover:text-blue-400 transition duration-300 text-sm">Why Us?</a></li>
+                    <li><a href="about.html#testimonials" class="hover:text-blue-400 transition duration-300 text-sm">Reviews</a></li>
+                    <li><a href="#" class="hover:text-blue-400 transition duration-300 text-sm">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-blue-400 transition duration-300 text-sm">Terms of Service</a></li>
+                </ul>
+            </div>
+            <!-- Contact Info -->
+            <div>
+                <h3 class="text-xl font-semibold text-white mb-4">Contact Us</h3>
+                <p class="text-sm">Email: info@pretravelessentials.com</p>
+                <p class="text-sm">Phone: +1 (123) 456-7890</p>
+                <div class="flex space-x-4 mt-4">
+                    <!-- Social media icons directly using Lucide SVG paths -->
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-twitter"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17-17 17a19.11 19.11 0 0 1-5-1.2c.6 0 2.4.1 4.9-1.3C3.6 15 1 12.7 1 7.2s2.5-5.3 4.9-5.3c-.4-.1-.7-.1-1.1-.1C11.5 13.6 14.5 12 17 7.2c-1.6-.4-3.2-1.3-4.7-2.3C15 2.5 17.5 2 22 4Z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-500">
+            &copy; <span id="current-year"></span> Pre-Travel Essentials. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize Lucide Icons
+            lucide.createIcons();
+
+            // Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+            const menuIcon = mobileMenuButton.querySelector('.menu-icon');
+            const closeIcon = mobileMenuButton.querySelector('.close-icon');
+
+            mobileMenuButton.addEventListener('click', () => {
+                const isOpen = mobileMenuOverlay.classList.contains('hidden');
+                if (isOpen) {
+                    mobileMenuOverlay.classList.remove('hidden');
+                    menuIcon.classList.add('hidden');
+                    closeIcon.classList.remove('hidden');
+                } else {
+                    mobileMenuOverlay.classList.add('hidden');
+                    menuIcon.classList.remove('hidden');
+                    closeIcon.classList.add('hidden');
+                }
+            });
+
+            // Close mobile menu when a link is clicked
+            window.closeMobileMenu = () => {
+                mobileMenuOverlay.classList.add('hidden');
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            };
+
+            // Testimonial Data
+            const testimonials = [
+                {
+                    id: 1,
+                    name: 'Alice Johnson',
+                    location: 'New York, USA',
+                    quote: 'Pre-Travel Essentials made my recent trip so much smoother! The universal adapter was a lifesaver.',
+                    rating: 5
+                },
+                {
+                    id: 2,
+                    name: 'Ben Carter',
+                    location: 'London, UK',
+                    quote: 'Fantastic quality products and super fast delivery. Highly recommend for any traveler.',
+                    rating: 4
+                },
+                {
+                    id: 3,
+                    name: 'Chloe Davis',
+                    location: 'Sydney, Australia',
+                    quote: 'Their travel pillow is incredibly comfortable. I actually slept on my long-haul flight!',
+                    rating: 5
+                },
+            ];
+
+            // Function to render testimonial cards
+            const renderTestimonialCards = () => {
+                const testimonialList = document.getElementById('testimonial-list');
+                testimonialList.innerHTML = ''; // Clear existing content
+                testimonials.forEach(testimonial => {
+                    const testimonialCardHtml = `
+                        <div class="bg-white p-8 rounded-xl shadow-md border border-gray-100 flex flex-col justify-between h-full transform hover:scale-[1.02] transition-transform duration-300">
+                            <div class="mb-4">
+                                <div class="flex text-yellow-500 mb-2">
+                                    ${Array(5).fill().map((_, i) => `
+                                        <i data-lucide="star" class="${i < testimonial.rating ? 'fill-current' : 'text-gray-400'}" style="width: 20px; height: 20px;"></i>
+                                    `).join('')}
+                                </div>
+                                <p class="italic text-gray-700 leading-relaxed">"${testimonial.quote}"</p>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-900 mt-4">- ${testimonial.name}</p>
+                                <p class="text-gray-500 text-sm">${testimonial.location}</p>
+                            </div>
+                        </div>
+                    `;
+                    testimonialList.insertAdjacentHTML('beforeend', testimonialCardHtml);
+                });
+                lucide.createIcons(); // Re-render Lucide icons after adding new HTML
+            };
+
+            // Initial rendering
+            renderTestimonialCards();
+        });
+    </script>
+</body>
+</html>
